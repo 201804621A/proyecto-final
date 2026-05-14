@@ -3,130 +3,162 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
 }
 
 body{
     background:#f2f2f2;
+    font-family:Arial, sans-serif;
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 nav{
     width:100%;
-    height:120px;
     background:#0A0A0B;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:0 40px;
+    padding:15px 40px;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
 .logo{
     display:flex;
     align-items:center;
+    gap:15px;
 }
 
 .logo img{
-    height:100px;
-    width:auto;
+    height:80px;
     object-fit:contain;
+}
+
+.logo h1{
+    color:white;
+    font-size:20px;
+    line-height:1.3;
+    font-family:'Raleway', sans-serif;
 }
 
 .menu{
     display:flex;
-    gap:25px;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
 .menu a{
     color:white;
     text-decoration:none;
-    font-size:18px;
+    font-size:17px;
+    padding:8px 12px;
+    border-radius:6px;
+    transition:0.3s;
 }
 
-/* TITULOS */
-h1{
+.menu a:hover{
+    background:#1e3a5f;
     color:white;
-    padding:20px;
-    font-family: 'Raleway', sans-serif;
-    font-weight:700;
-    letter-spacing:1.5px;
 }
 
-.texto h1{
-    font-size:38px;
-    margin-bottom:20px;
+/* DROPDOWN */
+.dropdown{
+    position:relative;
 }
 
-/* ===== CONTENEDOR ===== */
+.submenu{
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#0A0A0B;
+    border-radius:8px;
+    display:none;
+    flex-direction:column;
+    min-width:220px;
+    overflow:hidden;
+    z-index:100;
+}
+
+.submenu a{
+    padding:12px 15px;
+    font-size:14px;
+}
+
+.submenu a:hover{
+    background:#1e3a5f;
+}
+
+.dropdown:hover .submenu{
+    display:flex;
+}
+
+/* BUSCADOR */
+.buscador input{
+    padding:10px 15px;
+    border:none;
+    border-radius:25px;
+    outline:none;
+    font-size:14px;
+}
+
+.buscador input:focus{
+    box-shadow:0 0 5px rgba(255,255,255,0.5);
+}
+
+/* CONTENEDOR PRINCIPAL */
 .contenedor-principal{
     width:90%;
     margin:40px auto;
     display:flex;
     gap:25px;
+    align-items:stretch;
 }
 
-/* ===== SLIDER ===== */
-.slider{
+/* GALERIA ACORDEON */
+.galeria-acordeon{
     flex:3;
-    height:600px;
-    position:relative;
+    height:500px;
+    display:flex;
     overflow:hidden;
     border-radius:15px;
-    background:#000;
 }
 
-.slides{
-    width:100%;
-    height:100%;
+.panel{
     position:relative;
+    flex:1;
+    transition:0.5s ease;
+    overflow:hidden;
+    cursor:pointer;
 }
 
-.slides img{
-    position:absolute;
-    top:0;
-    left:0;
+.panel:hover{
+    flex:4;
+}
+
+.panel img{
     width:100%;
     height:100%;
     object-fit:cover;
-    opacity:0;
+    transition:0.5s;
 }
 
-/* ANIMACIÓN */
-.s1{ animation:fade 12s infinite; }
-.s2{ animation:fade 12s infinite 4s; }
-.s3{ animation:fade 12s infinite 8s; }
-
-@keyframes fade{
-    0%{ opacity:0; }
-    10%{ opacity:1; }
-    30%{ opacity:1; }
-    40%{ opacity:0; }
-    100%{ opacity:0; }
+.panel:hover img{
+    transform:scale(1.08);
 }
-/* BOTONES SLIDER */
-.prev,
-.next{
+
+.panel h3{
     position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    background:rgba(0,0,0,0.5);
+    bottom:20px;
+    left:20px;
     color:white;
-    border:none;
     font-size:28px;
-    padding:12px 18px;
-    cursor:pointer;
-    border-radius:50%;
+    background:rgba(0,0,0,0.5);
+    padding:10px 15px;
+    border-radius:10px;
+    font-family:'Raleway', sans-serif;
 }
 
-.prev{ left:15px; }
-.next{ right:15px; }
-
-.prev:hover,
-.next:hover{
-    background:rgba(0,0,0,0.8);
-}
-
-/* ===== BARRA SERVICIOS ===== */
+/* BARRA SERVICIOS */
 .barra-servicios{
     flex:1;
     background:white;
@@ -135,9 +167,9 @@ h1{
 }
 
 .barra-servicios h2{
+    text-align:center;
     color:#1e3a5f;
     margin-bottom:20px;
-    text-align:center;
 }
 
 .barra-servicios ul{
@@ -150,39 +182,56 @@ h1{
     background:#f2f2f2;
     border-left:5px solid #1e3a5f;
     border-radius:6px;
+    transition:0.3s;
+}
+
+.barra-servicios li:hover{
+    background:#1e3a5f;
+    color:white;
+    transform:translateX(5px);
 }
 
 .barra-servicios button{
     width:100%;
     padding:12px;
-    margin-top:10px;
+    margin-top:15px;
     border:none;
     background:#1e3a5f;
     color:white;
     border-radius:8px;
     cursor:pointer;
+    transition:0.3s;
 }
 
-/* ===== PRESENTACION ===== */
+.barra-servicios button:hover{
+    background:#16314f;
+}
+
+/* PRESENTACION */
 .principal{
     width:90%;
     margin:40px auto;
+    background:white;
+    border-radius:15px;
     padding:40px;
     display:flex;
     gap:30px;
     align-items:center;
-    background:white;
-    border-radius:15px;
 }
 
 .texto{
-    flex:2;
+    flex:1;
+}
+
+.texto h1{
+    font-size:38px;
+    margin-bottom:20px;
 }
 
 .texto p{
     font-size:18px;
+    line-height:1.7;
     margin-bottom:20px;
-    line-height:1.6;
 }
 
 .texto button{
@@ -191,6 +240,7 @@ h1{
     background:#1e3a5f;
     color:white;
     border-radius:6px;
+    cursor:pointer;
 }
 
 .imagen{
@@ -199,12 +249,11 @@ h1{
 
 .imagen img{
     width:100%;
-    height:250px;
-    object-fit:cover;
     border-radius:12px;
+    object-fit:cover;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 .footer{
     background:#0A0A0B;
     color:white;
@@ -216,8 +265,7 @@ h1{
     margin:auto;
     padding:40px 0;
     display:flex;
-    justify-content:space-between;
-    gap:30px;
+    gap:40px;
 }
 
 .footer-col{
@@ -230,8 +278,8 @@ h1{
 }
 
 .footer-col p{
-    font-size:14px;
     line-height:1.6;
+    font-size:14px;
 }
 
 .footer-col ul{
@@ -245,187 +293,178 @@ h1{
 .footer-col a{
     color:white;
     text-decoration:none;
-    font-size:14px;
 }
 
 .footer-col a:hover{
     color:#ffd700;
 }
 
-.footer-copy{
-    text-align:center;
-    padding:15px;
-    background:#0A0A0B;
-    font-size:14px;
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-
-    .contenedor-principal,
-    .principal{
-        flex-direction:column;
-        width:95%;
-    }
-
-    .slider{
-        height:260px;
-    }
-
-    .barra-servicios{
-        width:100%;
-        margin-top:20px;
-    }
-
-    .footer-contenedor{
-        flex-direction:column;
-        text-align:center;
-    }
-}
-
-@media(max-width:480px){
-    .slider{ height:210px; }
-
-    .prev,
-    .next{
-        font-size:18px;
-        padding:8px 12px;
-    }
-}
-
-@media(max-width:360px){
-    .slider{ height:180px; }
-}
-.barra-servicios li{
-    padding:12px;
-    margin-bottom:10px;
-    background:#f2f2f2;
-    border-left:5px solid #1e3a5f;
-    border-radius:6px;
-    transition:0.3s; /* animación suave */
-}
-
-/* EFECTO AL PASAR EL MOUSE */
-.barra-servicios li:hover{
-    background:#1e3a5f;
-    color:white;
-    transform:translateX(5px); /* pequeño movimiento pro */
-}
-.menu a{
-    color:white;
-    text-decoration:none;
-    font-size:18px;
-    padding:8px 12px;
-    border-radius:6px;
-    transition:0.3s;
-}
-
-/* EFECTO HOVER */
-.menu a:hover{
-    background:#7fa1ce;
-    color:#6b7556;
-}
-/* FORM EN FOOTER */
+/* FORMULARIO */
 .footer form{
     display:flex;
     flex-direction:column;
     gap:8px;
 }
 
-/* LABELS */
 .footer form label{
     font-size:12px;
     color:#ccc;
 }
 
-/* INPUTS Y TEXTAREA */
 .footer form input,
 .footer form textarea{
     width:100%;
-    padding:6px 8px;
-    font-size:12px;
+    padding:10px;
     border:none;
     border-radius:5px;
     outline:none;
 }
 
-/* EFECTO FOCUS */
-.footer form input:focus,
-.footer form textarea:focus{
-    box-shadow:0 0 5px rgba(255,255,255,0.3);
-}
-
-/* TEXTAREA */
 .footer form textarea{
     resize:none;
-    height:60px;
+    height:80px;
 }
 
-/* BOTÓN */
 .footer form input[type="submit"]{
     background:#ffd700;
-    color:#000;
     font-weight:bold;
     cursor:pointer;
     transition:0.3s;
 }
 
-/* HOVER BOTÓN */
 .footer form input[type="submit"]:hover{
     background:#ffcc00;
-    transform:scale(1.03);
-}
-/* BUSCADOR */
-.buscador{
-    margin-left:20px;
+    transform:scale(1.02);
 }
 
-.buscador input{
-    padding:8px 12px;
-    border-radius:20px;
-    border:none;
-    outline:none;
+.footer-copy{
+    text-align:center;
+    padding:15px;
+    background:#050505;
     font-size:14px;
 }
 
-/* EFECTO */
-.buscador input:focus{
-    box-shadow:0 0 5px rgba(255,255,255,0.5);
-}
-.dropdown{
-    position:relative;
+/* TABLET */
+@media(max-width:992px){
+
+    nav{
+        justify-content:center;
+        text-align:center;
+    }
+
+    .contenedor-principal{
+        flex-direction:column;
+    }
+
+    .principal{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .galeria-acordeon{
+        height:400px;
+    }
 }
 
-/* submenu */
-.submenu{
-    position:absolute;
-    top:100%;
-    left:0;
-    background:#0A0A0B;
-    border-radius:8px;
-    display:none;
-    flex-direction:column;
-    min-width:180px;
-    padding:10px 0;
-    z-index:100;
+/* CELULAR */
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        padding:20px;
+    }
+
+    .logo{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .logo img{
+        height:70px;
+    }
+
+    .logo h1{
+        font-size:18px;
+    }
+
+    .menu{
+        justify-content:center;
+        width:100%;
+    }
+
+    .buscador{
+        width:100%;
+    }
+
+    .buscador input{
+        width:100%;
+    }
+
+    .contenedor-principal,
+    .principal,
+    .footer-contenedor{
+        width:95%;
+    }
+
+    .galeria-acordeon{
+        height:250px;
+        flex-direction:row;
+    }
+
+    .panel{
+        flex:1;
+        height:100%;
+    }
+
+    .panel:hover{
+        flex:3;
+    }
+
+    .panel h3{
+        font-size:16px;
+        padding:8px 10px;
+    }
+
+    .principal{
+        padding:25px;
+    }
+
+    .texto h1{
+        font-size:28px;
+    }
+
+    .texto p{
+        font-size:16px;
+    }
+
+    .footer-contenedor{
+        flex-direction:column;
+    }
 }
 
-/* links submenu */
-.submenu a{
-    padding:10px 15px;
-    color:white;
-    text-decoration:none;
-    font-size:14px;
-}
+/* CELULARES PEQUEÑOS */
+@media(max-width:480px){
 
-.submenu a:hover{
-    background:#1e3a5f;
-}
+    .menu{
+        flex-direction:column;
+        gap:10px;
+    }
 
-/* mostrar */
-.dropdown:hover .submenu{
-    display:flex;
-}
-.menu{
-    align-items:center;
+    .galeria-acordeon{
+        height:200px;
+    }
+
+    .panel h3{
+        font-size:14px;
+        left:8px;
+        bottom:8px;
+    }
+
+    .texto h1{
+        font-size:24px;
+    }
+
+    .texto p{
+        font-size:15px;
+    }
 }
