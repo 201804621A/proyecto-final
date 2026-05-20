@@ -18,99 +18,88 @@
     Inversiones y Servicios </h1></div>
     <div class="menu">
         <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
         <div class="dropdown">
         <a href="servicios.html">Servicios</a>
-        <div class="submenu">
-            <a href="#">impresiones en General</a>
-            <a href="#">Tramite MTC</a>
-            <a href="#">Tramites Viruales</a>
-            <a href="#">Fotografias</a>
-        </div>
     </div>
         <a href="galeria.html">Galería</a>
-        <a href="blog.html">Blog</a>
         <a href="#">Contacto</a>
     </div>
-    <div class="buscador">
-        <input type="text" placeholder="Buscar...">
-    </div>
+  <div class="buscador">
+    <input type="text" id="buscar" placeholder="Buscar servicios...">
+</div>
 </nav>
 
 <!-- SLIDER + BARRA DERECHA -->
 <section class="contenedor-principal">
-
    <!-- GALERIA ACORDEON -->
 <div class="galeria-acordeon">
-
-    <div class="panel">
-        <img src="imagenes/slider-1.jpeg" alt="">
-        <h3>Impresiones</h3>
-    </div>
-
-    <div class="panel">
-        <img src="imagenes/slider-2.jpg" alt="">
-        <h3>Fotografías</h3>
-    </div>
-
     <div class="panel">
         <img src="imagenes/slider-3.jpg" alt="">
+        <h3>Impresiones</h3>
+    </div>
+    <div class="panel">
+        <img src="imagenes/slider-1.jpeg" alt="">
+        <h3>Fotografías</h3>
+    </div>
+    <div class="panel">
+        <img src="imagenes/slider-2.jpg" alt="">
         <h3>Trámites</h3>
     </div>
-
 </div>
     <!-- Barra lateral -->
     <aside class="barra-servicios">
-
         <h2>Servicios</h2>
-
         <ul>
-            <li>Fotografias</li>
-            <li>Anillados</li>
-            <li>Cerigrafiados</li>
-            <li>Tarjetas De Eventos</li>
-            <li>Licencia Nueva A-1</li>
-            <li>Revalidacion de licencias</li>
-            <li>Recategorizacion de licencias</li>
-            <li>Tramites de la SUNARP</li>
-            <li>RENIEC</li>
-            <li>FICHAS C4</li>
-        </ul>
-
-        <button>Contáctanos</button>
-
-    </aside>
-
+        <li class="busqueda"><a href="servicios.html#fotografias">Fotografías</a></li>
+        <li class="busqueda"><a href="servicios.html#anillados">Anillados</a></li>
+        <li class="busqueda"><a href="servicios.html#cerigrafiados">Cerigrafiados</a></li>
+        <li class="busqueda"><a href="servicios.html#tarjetas">Tarjetas De Eventos</a></li>
+        <li class="busqueda"><a href="servicios.html#licencia-a1">Licencia Nueva A-1</a></li>
+        <li class="busqueda"><a href="servicios.html#revalidacion">Revalidación de Licencias</a></li>
+        <li class="busqueda"><a href="servicios.html#recategorizacion">Recategorización de Licencias</a></li>
+        <li class="busqueda"><a href="servicios.html#sunarp">Trámites de la SUNARP</a></li>
+        <li class="busqueda"><a href="servicios.html#reniec">RENIEC</a></li>
+        <li class="busqueda"><a href="servicios.html#c4">FICHAS C4</a></li>
+    </ul>
+</aside>
 </section>
-
 <!-- PRESENTACIÓN -->
-<section class="principal">
-
-<div class="texto">
-<h1>Bienvenido a Mi Página</h1>
-
+<section class="trabajos">
+<h2>Nuestros Trabajos y Servicios</h2>
 <p>
-Somos una empresa dedicada a brindar soluciones modernas e innovadoras.
-Nuestro equipo trabaja con compromiso, creatividad y tecnología para
-hacer crecer tu negocio.
+Brindamos soluciones rápidas y profesionales en impresión,
+fotografía y trámites administrativos.
 </p>
-
-<button>Leer más</button>
+<div class="trabajos-grid">
+<div class="trabajo-card busqueda">
+<img src="imagenes/impresiones-1.jpg" alt="">
+<h3>Impresiones en General</h3>
+<p>Impresiones a color y blanco/negro con alta calidad.</p>
 </div>
-
-<div class="imagen">
-<img src="imagenes/index.jpg" alt="Empresa">
+<div class="trabajo-card busqueda">
+<img src="imagenes/fotografia-1.jpg" alt="">
+<h3>Fotografías</h3>
+<p>Fotos para documentos, eventos y trámites oficiales.</p>
 </div>
-
+<div class="trabajo-card busqueda">
+<img src="imagenes/tramites-2.jpg" alt="">
+<h3>Trámites MTC</h3>
+<p>Licencias, revalidaciones y asesoría personalizada.</p>
+</div>
+<div class="trabajo-card busqueda">
+<img src="imagenes/tramites-1.jpg" alt="">
+<h3>Trámites Virtuales</h3>
+<p>Servicios digitales rápidos y seguros.</p>
+</div>
+</div>
 </section>
 <footer class="footer">
-
     <div class="footer-contenedor">
-
         <div class="footer-col">
             <h3>Coorporacion Villa S.A.C</h3>
             <p>Brindamos soluciones digitales modernas para tu negocio.</p>
         </div>
-
         <div class="footer-col">
             <h4>Enlaces</h4>
             <ul>
@@ -120,27 +109,27 @@ hacer crecer tu negocio.
                 <li><a href="#">Contacto</a></li>
             </ul>
         </div>
-
         <div class="footer-col">
             <h4>Contacto</h4> 
             <div>
-            <form action="">
-            <label for="nombre"> NOMBRE Y APELLIDO</label>  <input type="text">
-            <label for="email"> EMAIL</label> <input type="email">
-            <label for="numero"> NUMERO TELEFONICO</label> <input type="number">
-            <label for="comentario"> COMENTARIOS</label> <textarea name="comentario" id=""></textarea>
-            <input type="submit">
+                <form id="formulario">
+            <label>NOMBRE Y APELLIDO</label>
+            <input type="text" id="nombre">
+            <label>EMAIL</label>
+            <input type="email" id="email" >
+            <label>NUMERO TELEFONICO</label>
+            <input type="number" id="numero" >
+            <label>COMENTARIOS</label>
+            <textarea id="comentario" ></textarea>
+            <input type="submit" value="Enviar" >
         </form>
          </div>
         </div>
-
     </div>
-
     <div class="footer-copy">
         <p>© 2026 Coorporacion Villa S.A.C - Todos los derechos reservados</p>
     </div>
-
 </footer>
+<script src="script.js"></script>
 </body>
 </html>
-```
